@@ -20,18 +20,17 @@ lightgreen=$(echo -en "\e[92m")
 
 echo "
 ${bold}${lightgreen}========================================================================
-                                                                                                  
+
 ${bold}${lightblue}████████╗██████╗░███████╗░██████╗████████╗██╗░░██╗░█████╗░░██████╗████████╗  ██╗░░░██╗███╗░░░███╗
 ${bold}${lightblue}╚══██╔══╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝██║░░██║██╔══██╗██╔════╝╚══██╔══╝  ██║░░░██║████╗░████║ 
 ${bold}${lightblue}░░░██║░░░██████╔╝█████╗░░╚█████╗░░░░██║░░░███████║██║░░██║╚█████╗░░░░██║░░░  ╚██╗░██╔╝██╔████╔██║
 ${bold}${lightblue}░░░██║░░░██╔══██╗██╔══╝░░░╚═══██╗░░░██║░░░██╔══██║██║░░██║░╚═══██╗░░░██║░░░  ░╚████╔╝░██║╚██╔╝██║  
 ${bold}${lightblue}░░░██║░░░██║░░██║███████╗██████╔╝░░░██║░░░██║░░██║╚█████╔╝██████╔╝░░░██║░░░  ░░╚██╔╝░░██║░╚═╝░██║   
 ${bold}${lightblue}░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░╚═════╝░░░░╚═╝░░░  ░░░╚═╝░░░╚═╝░░░░░╚═╝   
-                                                                                                  
-                                                                                                                
+
 ${bold}${lightgreen}========================================================================
     "
- 
+
 echo "${nc}"
 
 if [[ -f "./.tresthost/installed" ]]; then
@@ -80,7 +79,7 @@ else
     rm -rf ngrok.zip >/dev/null 2>err.log
     echo -ne '############         (60%)\r'
 
-    cmds=("mv gotty /usr/bin/" "mv unzip /usr/bin/" "mv ngrok /usr/bin/" "apt-get update" "apt-get -y upgrade" "apt-get -y install sudo curl wget hwloc htop nano neofetch python3" "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py")
+    cmds=("mv gotty /usr/bin/" "mv unzip /usr/bin/" "mv ngrok /usr/bin/" "apt update" "apt -y upgrade" "apt -y install sudo curl wget hwloc htop nano neofetch python3" "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py")
 
     for cmd in "${cmds[@]}"; do
         ./libraries/proot -S . /bin/bash -c "$cmd >/dev/null 2>err.log"
@@ -88,21 +87,20 @@ else
     echo -ne '####################(100%)\r'
     echo -ne '\n'
     touch "$HOME/.tresthost/installed"
-    
+
 echo "
 ${bold}${lightgreen}========================================================================
-                                                                                                  
+
 ${bold}${lightblue}████████╗██████╗░███████╗░██████╗████████╗██╗░░██╗░█████╗░░██████╗████████╗  ██╗░░░██╗███╗░░░███╗
 ${bold}${lightblue}╚══██╔══╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝██║░░██║██╔══██╗██╔════╝╚══██╔══╝  ██║░░░██║████╗░████║ 
 ${bold}${lightblue}░░░██║░░░██████╔╝█████╗░░╚█████╗░░░░██║░░░███████║██║░░██║╚█████╗░░░░██║░░░  ╚██╗░██╔╝██╔████╔██║
 ${bold}${lightblue}░░░██║░░░██╔══██╗██╔══╝░░░╚═══██╗░░░██║░░░██╔══██║██║░░██║░╚═══██╗░░░██║░░░  ░╚████╔╝░██║╚██╔╝██║  
 ${bold}${lightblue}░░░██║░░░██║░░██║███████╗██████╔╝░░░██║░░░██║░░██║╚█████╔╝██████╔╝░░░██║░░░  ░░╚██╔╝░░██║░╚═╝░██║   
 ${bold}${lightblue}░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░╚═════╝░░░░╚═╝░░░  ░░░╚═╝░░░╚═╝░░░░░╚═╝   
-                                                                                                  
-                                                                                                                
+
 ${bold}${lightgreen}========================================================================
     "
- 
+
 echo "${nc}"
     
     echo "${bold}${lightgreen}==> Started ${lightblue}Container${lightgreen} <=="
